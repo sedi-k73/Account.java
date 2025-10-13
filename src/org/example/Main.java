@@ -1,8 +1,8 @@
 // LESEDI KHUMOLETLOTLO MOREKU , ST10484098
 // With guidance from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
 // Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
+// IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
 
-//MY UPGRADED MAIN**
 package org.example;
 
 import javax.swing.JOptionPane;
@@ -89,16 +89,21 @@ public class Main {
                         String hash = msg.createMessageHash();
                         String msgID = msg.getMessageID();
 
-                        // ✅ Display full message details as per POE requirement #7
-                        String messageDetails = """
-                                Message Sent Details:
-                                Message ID: %s
-                                Message Hash: %s
+                        // ✅ UPGRADED MESSAGE DETAILS SECTION (with total count)
+                        JOptionPane.showMessageDialog(null, """
+                                Message Details:
+                                ID: %s
+                                Hash: %s
                                 Recipient: %s
                                 Message: %s
-                                """.formatted(msgID, hash, recipient, messageText);
-
-                        JOptionPane.showMessageDialog(null, messageDetails, "Message Details", JOptionPane.INFORMATION_MESSAGE);
+                                Total Messages Sent So Far: %d
+                                """.formatted(
+                                msgID,
+                                hash,
+                                recipient,
+                                messageText,
+                                Message.returnTotalMessages() + 1  // includes current one
+                        ), "Message Details", JOptionPane.INFORMATION_MESSAGE);
 
                         String choiceInput = JOptionPane.showInputDialog("""
                                 Choose an option:
@@ -123,10 +128,10 @@ public class Main {
 
                         JOptionPane.showMessageDialog(null, optionResult);
 
-                        if (choice == 1) sentCount++; // only count sent messages
+                        if (choice == 1) sentCount++; // count only sent ones
                     }
 
-                    //  Show total number of messages sent (requirement #6)
+                    // ✅ Display total messages summary after sending
                     JOptionPane.showMessageDialog(null,
                             "You have sent a total of " + sentCount + " message(s).",
                             "Total Messages Sent",
@@ -147,6 +152,7 @@ public class Main {
                 default -> JOptionPane.showMessageDialog(null, "Invalid option, please try again.");
             }
         }
-    }
+    }// IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
 }
-// IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
+
+

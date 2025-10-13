@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06b3edef-37b6-4c96-a248-6a638fb693a1" name="Changes" comment="PART 2">
-      <change afterPath="$PROJECT_DIR$/src/org/example/MessageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Account.java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Account.java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/example/AccountTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/AccountTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/example/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/example/Messages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stored_messages.json" beforeDir="false" afterPath="$PROJECT_DIR$/stored_messages.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +239,23 @@
       <option name="project" value="LOCAL" />
       <updated>1760295578146</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="PART 2">
+      <option name="closed" value="true" />
+      <created>1760341989940</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760341989940</updated>
+    </task>
+    <task id="LOCAL-00009" summary="PART 2">
+      <option name="closed" value="true" />
+      <created>1760342228534</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760342228534</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -292,9 +304,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="PART 2" />
     <MESSAGE value="Revert &quot;Delete src/org/example directory&quot;&#10;&#10;This reverts commit b3c79567a5854acb5271e953b49e5c3fac671ca1." />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Delete src/org/example directory&quot;&#10;&#10;This reverts commit b3c79567a5854acb5271e953b49e5c3fac671ca1." />
+    <MESSAGE value="PART 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="PART 2" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Account_java$AccountTest.ic" NAME="AccountTest Coverage Results" MODIFIED="1760221828416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
