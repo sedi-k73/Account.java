@@ -1,6 +1,6 @@
 // LESEDI KHUMOLETLOTLO MOREKU , ST10484098
-// with the help from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
-// and Gson Documentation – Google. Available at: https://github.com/google/gson
+// With guidance from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
+// Gson Documentation – Google. Available at: https://github.com/google/gson
 
 package org.example;
 
@@ -18,7 +18,6 @@ public class Message {
     private String messageHash;
 
     // Keeps all sent messages in memory
-
     private static int totalMessages = 0;
     private static final ArrayList<String> sentMessages = new ArrayList<>();
 
@@ -31,7 +30,6 @@ public class Message {
     }
 
     // Check Message ID - must not exceed 10 characters
-
     public boolean checkMessageID(String messageID) {
         return messageID.length() <= 10;
     }
@@ -51,15 +49,12 @@ public class Message {
         return messageID;
     }
 
-
     // Check Recipient Cell number format
     public boolean checkRecipientCell(String cellNumber) {
         return cellNumber.startsWith("+27") && cellNumber.length() == 12;
     }
 
-
     // Validate Message Length (max 250 characters)
-
     public String validateMessageLength() {
         if (message.length() <= 250) {
             return "Message ready to send.";
@@ -69,12 +64,19 @@ public class Message {
         }
     }
 
-    // ✅ Create Message Hash (matches POE specification)
+    //  Create Message Hash
     public String createMessageHash() {
-        // Simple custom hash like “00:0:HITONIGHT”
-        String cleaned = message.replaceAll("\\s+", "").toUpperCase();
-        String lastPart = cleaned.length() > 8 ? cleaned.substring(cleaned.length() - 8) : cleaned;
-        return "00:0:" + lastPart;
+        // Split message into words
+        String[] words = message.trim().split("\\s+");
+        String firstWord = words[0].toUpperCase();
+        String lastWord = words.length > 1 ? words[words.length - 1].toUpperCase() : firstWord;
+
+        // Get first two characters that are numbers (if any) from messageID
+        String digits = messageID.replaceAll("\\D", ""); // remove non-digits
+        String firstTwoNumbers = digits.length() >= 2 ? digits.substring(0, 2) : "00";
+
+        // Combine into final hash format: 00:0:FIRSTLAST
+        return firstTwoNumbers + ":0:" + firstWord + lastWord;
     }
 
 
@@ -91,10 +93,9 @@ public class Message {
                 storeMessageJSON();
                 return "Message successfully stored.";
             default:
-                return "Invalid option.";    // // IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
+                return "Invalid option.";
         }
     }
-
 
     // Print all messages sent while running
     public static String printMessages() {
@@ -108,21 +109,17 @@ public class Message {
         return sb.toString();
     }
 
-
-
-
     // Return Total Messages Sent
     public static int returnTotalMessages() {
         return totalMessages;
     }
 
-
-    //  Store message in JSON file using GSON
+    // Store message in JSON file using GSON
     public void storeMessageJSON() {
         Gson gson = new Gson();
         try (FileWriter writer = new FileWriter("stored_messages.json", true)) {
-            gson.toJson(this, writer);    // // Stack Overflow Community. (2025). Discussions on Java OOP and JSON handling. Available at: https://stackoverflow.com/
-            writer.write(System.lineSeparator());
+            gson.toJson(this, writer);
+            writer.write(System.lineSeparator());  //  Stack Overflow Community. (2025). Discussions on Java OOP and JSON handling. Available at: https://stackoverflow.com/
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,7 +1,9 @@
 // LESEDI KHUMOLETLOTLO MOREKU , ST10484098
 // With guidance from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
-//  Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
- package org.example;
+// Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
+
+//MY UPGRADED MAIN**
+package org.example;
 
 import javax.swing.JOptionPane;
 
@@ -67,6 +69,8 @@ public class Main {
                         continue;
                     }
 
+                    int sentCount = 0; // count successfully sent messages
+
                     for (int i = 0; i < totalMessages; i++) {
                         String recipient = JOptionPane.showInputDialog("Enter recipient number (must start with +27 and be 12 digits):");
                         String messageText = JOptionPane.showInputDialog("Enter message text (max 250 characters):");
@@ -85,11 +89,16 @@ public class Main {
                         String hash = msg.createMessageHash();
                         String msgID = msg.getMessageID();
 
-                        JOptionPane.showMessageDialog(null, """
-                                Message Details:
-                                ID: %s
-                                Hash: %s
-                                """.formatted(msgID, hash));
+                        // ✅ Display full message details as per POE requirement #7
+                        String messageDetails = """
+                                Message Sent Details:
+                                Message ID: %s
+                                Message Hash: %s
+                                Recipient: %s
+                                Message: %s
+                                """.formatted(msgID, hash, recipient, messageText);
+
+                        JOptionPane.showMessageDialog(null, messageDetails, "Message Details", JOptionPane.INFORMATION_MESSAGE);
 
                         String choiceInput = JOptionPane.showInputDialog("""
                                 Choose an option:
@@ -113,8 +122,16 @@ public class Main {
                         };
 
                         JOptionPane.showMessageDialog(null, optionResult);
+
+                        if (choice == 1) sentCount++; // only count sent messages
                     }
-                }  //    https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html
+
+                    //  Show total number of messages sent (requirement #6)
+                    JOptionPane.showMessageDialog(null,
+                            "You have sent a total of " + sentCount + " message(s).",
+                            "Total Messages Sent",
+                            JOptionPane.INFORMATION_MESSAGE);
+                }
 
                 case 2 -> {
                     // --- SHOW SENT MESSAGES ---
@@ -131,4 +148,5 @@ public class Main {
             }
         }
     }
-} // IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
+}
+// IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
