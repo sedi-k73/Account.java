@@ -1,8 +1,8 @@
 // LESEDI KHUMOLETLOTLO MOREKU , ST10484098
 // With guidance from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
-// Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
 // IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
 
+//MY UPGRADED MAIN***
 package org.example;
 
 import javax.swing.JOptionPane;
@@ -89,8 +89,8 @@ public class Main {
                         String hash = msg.createMessageHash();
                         String msgID = msg.getMessageID();
 
-                        // ✅ UPGRADED MESSAGE DETAILS SECTION (with total count)
-                        JOptionPane.showMessageDialog(null, """
+                        //  UPGRADED MESSAGE DETAILS SECTION (with total count)  //Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
+                        JOptionPane.showMessageDialog(null, """ 
                                 Message Details:
                                 ID: %s
                                 Hash: %s
@@ -131,7 +131,7 @@ public class Main {
                         if (choice == 1) sentCount++; // count only sent ones
                     }
 
-                    // ✅ Display total messages summary after sending
+                    //  Display total messages summary after sending
                     JOptionPane.showMessageDialog(null,
                             "You have sent a total of " + sentCount + " message(s).",
                             "Total Messages Sent",

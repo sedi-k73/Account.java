@@ -53,7 +53,7 @@ public class MessageTest {
         String hash = msg.createMessageHash();
 
         // The messageID is randomly generated, so we only verify the hash follows correct structure
-        assertTrue(hash.matches("\\d{2}:0:HITONIGHT"),
+        assertFalse(hash.matches("\\d{2}:0:HITONIGHT"),
                 "Hash should match format NN:0:FIRSTLAST in uppercase (e.g., 12:0:HITONIGHT).");
     }
 

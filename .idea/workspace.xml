@@ -7,7 +7,8 @@
     <list default="true" id="06b3edef-37b6-4c96-a248-6a638fb693a1" name="Changes" comment="PART 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/example/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/example/MessageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/example/MessageTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stored_messages.json" beforeDir="false" afterPath="$PROJECT_DIR$/stored_messages.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +62,7 @@
     "JUnit.AccountTest.executor": "Run",
     "JUnit.LoginTest.executor": "Run",
     "JUnit.MessageTest.executor": "Run",
+    "JUnit.MessageTest.testMessageHashGeneration.executor": "Run",
     "JUnit.org.example.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Repository.Attach.Annotations": "false",
@@ -146,6 +148,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MessageTest.testMessageHashGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Account.java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.MessageTest" />
+      <option name="METHOD_NAME" value="testMessageHashGeneration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
@@ -166,10 +184,12 @@
     <list>
       <item itemvalue="JUnit.LoginTest" />
       <item itemvalue="JUnit.AccountTest (1)" />
+      <item itemvalue="JUnit.MessageTest.testMessageHashGeneration" />
       <item itemvalue="JUnit.AccountTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MessageTest.testMessageHashGeneration" />
         <item itemvalue="JUnit.AccountTest (1)" />
         <item itemvalue="JUnit.AccountTest" />
       </list>
@@ -255,7 +275,15 @@
       <option name="project" value="LOCAL" />
       <updated>1760342228534</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="PART 2">
+      <option name="closed" value="true" />
+      <created>1760346354456</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1760346354456</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
