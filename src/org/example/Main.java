@@ -2,7 +2,6 @@
 // With guidance from: OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
 // IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
 
-//MY UPGRADED MAIN***
 package org.example;
 
 import javax.swing.JOptionPane;
@@ -41,7 +40,7 @@ public class Main {
         // --- MAIN MENU LOOP ---
         boolean running = true;
 
-        while (running) {
+        while (running) {     //Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
             String menuInput = JOptionPane.showInputDialog("""
                     Choose an option:
                     1) Send a New Message
@@ -89,8 +88,8 @@ public class Main {
                         String hash = msg.createMessageHash();
                         String msgID = msg.getMessageID();
 
-                        //  UPGRADED MESSAGE DETAILS SECTION (with total count)  //Oracle. (n.d.). Class JOptionPane — Java Platform SE Documentation. Retrieved from:
-                        JOptionPane.showMessageDialog(null, """ 
+                        //  Message Details with Total Messages So Far
+                        JOptionPane.showMessageDialog(null, """
                                 Message Details:
                                 ID: %s
                                 Hash: %s
@@ -102,7 +101,7 @@ public class Main {
                                 hash,
                                 recipient,
                                 messageText,
-                                Message.returnTotalMessages() + 1  // includes current one
+                                Message.returnTotalMessages() + 1
                         ), "Message Details", JOptionPane.INFORMATION_MESSAGE);
 
                         String choiceInput = JOptionPane.showInputDialog("""
@@ -139,9 +138,10 @@ public class Main {
                 }
 
                 case 2 -> {
-                    // --- SHOW SENT MESSAGES ---
-                    JOptionPane.showMessageDialog(null, Message.printMessages() +
-                            "\nTotal messages sent: " + Message.returnTotalMessages());
+                    // --- SHOW SENT MESSAGES (TEMP DISABLED FEATURE) ---
+                    JOptionPane.showMessageDialog(null, """
+                             Coming Soon .
+                            """, "Coming Soon", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 case 3 -> {
@@ -152,7 +152,10 @@ public class Main {
                 default -> JOptionPane.showMessageDialog(null, "Invalid option, please try again.");
             }
         }
-    }// IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
+    }
 }
+
+    // IntelliJ IDEA Documentation – JetBrains. Available at: https://www.jetbrains.com/idea/docs/
+
 
 
