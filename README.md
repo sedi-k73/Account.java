@@ -15,7 +15,8 @@ Store and display all messages that have been sent or saved.
 The program also includes JUnit tests to ensure that core features like message validation and hashing work correctly.
 
  Key Classes and Their Responsibilities
-📨 Message.java
+ 
+ Message.java
 
 The Message class encapsulates all logic related to creating and processing a message.
 
@@ -39,7 +40,9 @@ createMessageHash()	Automatically generates a hash in the format NN:0:FIRSTLAST 
 sendMessage(String option)	Executes user choices (Send, Store, or Disregard) and returns appropriate feedback.
 printMessages()	Displays all sent messages in an easy-to-read list.
 storeMessageJSON()	Saves a message object into a local JSON file (stored_messages.json) using the Gson library.
-💬 Main.java
+
+
+ Main.java
 
 The Main class handles user interaction through JOptionPane dialogs.
 
