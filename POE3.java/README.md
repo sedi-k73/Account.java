@@ -1,131 +1,81 @@
-Project Section: Part 2 – Message Creation, Validation, and Testing
-
- Overview
-
-This part of the QuickChat application focuses on building a message management system that allows a registered user to:
-
-Create and send messages,
-
-Validate the message’s length and recipient number,
-
-Automatically generate a unique Message ID and a Message Hash, and
-
-Store and display all messages that have been sent or saved.
-
-The program also includes JUnit tests to ensure that core features like message validation and hashing work correctly.
-
- Key Classes and Their Responsibilities
- 
- Message.java
-
-The Message class encapsulates all logic related to creating and processing a message.
-
-Main Attributes
-Variable	Description
-recipientNumber	Stores the destination cellphone number (must start with +27).
-message	Holds the content text of the message.
-messageID	Randomly generated alphanumeric ID used to identify the message.
-messageHash	A short hash that summarizes message details.
-sentMessages	Static list that stores all sent messages for display.
-totalMessages	Tracks the total number of messages successfully sent.
-Main Methods
-Method	Function
-validateMessageLength()	Ensures the message does not exceed 250 characters. Returns a custom success/failure message.
-checkRecipientCell(String cellNumber)	Checks that the cell number starts with +27 and is 12 characters long.
-generateMessageID()	Generates a random 8-character alphanumeric ID.
-createMessageHash()	Automatically generates a hash in the format NN:0:FIRSTLAST where:
-– NN = first two digits of the message ID
-– 0 = message number
-– FIRST and LAST are the first and last words of the message in uppercase.
-sendMessage(String option)	Executes user choices (Send, Store, or Disregard) and returns appropriate feedback.
-printMessages()	Displays all sent messages in an easy-to-read list.
-storeMessageJSON()	Saves a message object into a local JSON file (stored_messages.json) using the Gson library.
+QuickChat — Part 3
 
 
- Main.java
+Language: Java
+Tools: IntelliJ, Maven, Gson, JUnit 5
 
-The Main class handles user interaction through JOptionPane dialogs.
+ What This Part Does
 
-Features
+Part 3 completes the QuickChat message system by adding:
 
-User Registration & Login
-Users register with their details and must log in before sending messages.
+ Array-Based Message Storage
 
-Message Menu
+Messages are stored using fixed arrays:
 
-Send a New Message
+Sent
 
-Show Recently Sent Messages
+Stored
 
-Quit Application
+Disregarded
 
-Message Creation Flow
+Counters are used to track how many messages each array holds.
 
-User enters recipient and message.
+ JSON Saving & Loading
 
-System validates both fields.
+Stored messages are saved to a JSON file using Gson.
+The system now handles empty JSON files safely (no more errors).
 
-If valid, system displays the message details:
-ID, Hash, Recipient, Message Text.
+ Search Features
 
-User chooses whether to Send, Store, or Disregard the message.
+You can now search messages by:
 
-Data Storage
+Message ID
 
-Messages sent are stored temporarily in memory (ArrayList).
+Recipient phone number
 
-Stored messages are also written to a JSON file for persistence.
+ Longest Message
 
- MessageTest.java
+The system finds and returns the longest message out of all arrays.
 
-The test class validates message logic using JUnit 5 assertions.
+ Delete by Message Hash
 
-Unit Tests Implemented
-Test Name	Description	Expected Outcome
-testMessageHashGeneration()	Confirms the generated hash follows the correct format.	 Passes if hash matches pattern NN:0:FIRSTLAST.
-testValidateMessageLength()	Ensures the message respects the 250-character rule.	 “Message ready to send.” or failure message with exceeded count.
-testCheckRecipientCell()	Verifies correct cellphone number format.	 “Cell phone number successfully captured.” or failure message.
-Example Output
+Messages can be removed using their unique hash value.
 
-When the user sends a message successfully, the system might display:
+ Full Report
 
-Message Details:
-ID: AB12CD34
-To: +27718693002
-Msg: Hi Mike, can you join us for dinner tonight
-Hash: 12:0:HITONIGHT
-Message successfully sent.
+Displays a list of all sent messages neatly.
 
+ JUnit 5 Testing
 
-And in the “Show Recently Sent Messages” view:
+A full test suite checks:
 
-Sent Messages:
-ID: AB12CD34 | To: +27718693002 | Msg: Hi Mike, can you join us for dinner tonight | Hash: 12:0:HITONIGHT
-Total messages sent: 1
+Array population
 
- Technologies Used
-Tool	Purpose
-Java 17+	Main programming language.
-IntelliJ IDEA Community Edition 2025.2	IDE for development.
-JUnit 5	Framework for writing and automating unit tests.
-Gson 2.10.1	Library for converting Java objects to/from JSON.
-Swing (JOptionPane)	GUI dialogs for user input and output.
- Continuous Integration (CI)
+Longest message
 
-The project can be linked to GitHub Actions for automated testing:
+Searching
 
-Every time code is committed, GitHub Actions can automatically compile and run all JUnit tests.
+Deleting
 
-This ensures consistent quality and prevents regression errors during development.
+Report output
 
- References
+All tests now run correctly.
 
-OpenAI. (2025). ChatGPT (GPT-5). Retrieved from https://openai.com/
+ How to Run
 
-Google. (2025). Gson – Java JSON Library. Retrieved from https://github.com/google/gson
+Open the project in IntelliJ IDEA
 
-Oracle. (n.d.). Class JOptionPane – Java Platform SE Documentation. Retrieved from https://docs.oracle.com/javase/8/docs/api/javax/swing/JOptionPane.html
+Make sure Gson is added to your project
 
-JetBrains. (2025). IntelliJ IDEA Documentation. Retrieved from https://www.jetbrains.com/idea/docs/
+Run Main.java
 
-Stack Overflow Community. (2025). Discussions on Java OOP and JSON Handling. Retrieved from https://stackoverflow.com/
+Run tests with JUnit or mvn test
+
+ References (Harvard)
+
+Google 2022, Gson Library, GitHub, accessed 18 Nov 2025.
+JUnit Team 2023, JUnit 5 Documentation, accessed 18 Nov 2025.
+Oracle 2024, Java SE Docs, accessed 18 Nov 2025.
+JetBrains 2025, IntelliJ IDEA, accessed 18 Nov 2025.
+OpenAI 2025, ChatGPT 5.1, accessed 18 Nov 2025.
+
